@@ -1,0 +1,4 @@
+[build-system]
+# Should be the same as `$POETRY_VERSION`:
+requires = ["poetry>=1.0"]
+build-backend = "poetry.masonry.api"

@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  mysql:
+    platform: linux/x86_64  # 추가된 라인
+    container_name: ilark-msa-mysql
+    image: mysql:8
+    environment:
+      - MYSQL_USER=ilark-msa
+      - MYSQL_PASSWORD=dkdlfkrMSA!@#
+      - MYSQL_ROOT_PASSWORD=dkdlfkrMSA!@#
+      - MYSQL_DATABASE=ilark_msa
+      - TZ=Asia/Seoul
+    ports:
+      - '11306:11306'
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    volumes:
+      - './docker/data:/var/lib/mysql'
